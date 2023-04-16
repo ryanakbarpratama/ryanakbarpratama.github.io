@@ -1,0 +1,28 @@
+.jumbotron {
+  padding: 2rem;
+  background-color: #bee9e8;
+}
+
+.jumbotron .container {
+  width: 100%;
+}
+
+/* .jumbotron1 {
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  background-color: #bee9e8;
+} */
+
+.jumbotron2 {
+  background-color: #bee9e8;
+}
+
+#portofolio {
+  background-color: #bee9e8;
+}
+
+section {
+  padding-top: 5rem;
+}
