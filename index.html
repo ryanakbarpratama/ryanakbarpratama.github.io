@@ -183,20 +183,29 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Thank You!</strong>, your message has been sent.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name">
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="name">
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email">
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
               </div>
               <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" rows="3" name="message"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
             </form>
           </div>
         </div>
@@ -222,7 +231,7 @@
           <a href="mailto:ryanakbarpratama@gmail.com" class="btn btn-secondary me-md-2 mb-3" target="mailto:ryanakbarpratama@gmail.com">
             <i class="bi bi-envelope-at-fill"></i>
           </a>
-          <a href="https://medium.com/@ryanakbarpratama" class="btn btn-secondary mb-3" target="https://medium.com/@ryanakbarpratamacl">
+          <a href="https://medium.com/@ryanakbarpratama" class="btn btn-secondary mb-3" target="https://medium.com/@ryanakbarpratama">
             <i class="bi bi-medium"></i>
           </a>
         </div>
@@ -236,5 +245,33 @@
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwzeCnXIVwQZR5TexSVc1Cd8nxWT_fWQ6Fx9rAiEb9VTgawsyqQmB7_XiVJ4iTfElexTQ/exec'
+      const form = document.forms['contact-form']
+      const btnSubmit = document.querySelector('.btn-submit')
+      const btnLoading = document.querySelector('.btn-loading')
+      const myAlert = document.querySelector('.my-alert')
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // ketika tombol submit diklik
+        // tampilkan loading, remove submit
+        btnLoading.classList.toggle('d-none')
+        btnSubmit.classList.toggle('d-none')
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // show btn-submit, hide btn-loading
+            btnLoading.classList.toggle('d-none')
+            btnSubmit.classList.toggle('d-none')
+            // show alert
+            myAlert.classList.toggle('d-none')
+            // reset form
+            form.reset()
+            console.log('Success!', response)
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
   </body>
 </html>
