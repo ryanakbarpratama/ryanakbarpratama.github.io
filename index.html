@@ -12,6 +12,9 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"/>
     
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+      
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
@@ -100,15 +103,15 @@
     <section id="about">
       <div class="container">
         <div class="row text-center mb-3">
-          <div class="col">
+          <div class="col" data-aos="fade-down" data-aos-duration="1000">
             <h2>About Me</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="fade-right" data-aos-duration="1000">
             <img src="/img/my-photo.JPG" class="img-thumbnail" alt="Ryan Akbar Pratama">
           </div>
-          <div class="col fs-6"> 
+          <div class="col fs-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400"> 
             <p>Hi, I'm Ryan Akbar Pratama, a Urban and Regional Planning graduate from Jember University. Highly committed, passionate in learning new things, have a strong analytical skill, and ability to work in team.</p>
             <p>I'm interested in becoming a <strong>data analyst</strong> due to its promising job prospects and relevance to my background. I have attended several bootcamps and courses, including the Google Data Analytics Professional Certificate and Udemy, to increase my knowledge of data analysis.</p>
             <p>I have expertise in data visualization, basic statistics, and <strong>proficiency in Python, SQL, and BI Tools</strong>. I have <strong>1 year of experience</strong> in an internship and related projects in the field of urban development related to data and data visualization.</p>
@@ -131,13 +134,13 @@
     <section id="portofolio">
       <div class="container">
         <div class="row text-center mb-3">
-          <div class="col">
+          <div class="col" data-aos="fade-down" data-aos-duration="1000">
             <h2>Portofolio</h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="500">
               <img src="/img/portofolio/porto1.png" class="card-img-top" alt="Portofolio 1">
               <div class="card-body">
                 <h5 class="card-title">Exploring Managerial Trends and Employee Salaries</h5>
@@ -148,7 +151,7 @@
         </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400">
               <img src="/img/portofolio/porto2.png" class="card-img-top" alt="Portofolio 2">
               <div class="card-body">
                 <h5 class="card-title">Uncovering the Truth Behind Unemployment in Indonesia</h5>
@@ -245,6 +248,12 @@
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwzeCnXIVwQZR5TexSVc1Cd8nxWT_fWQ6Fx9rAiEb9VTgawsyqQmB7_XiVJ4iTfElexTQ/exec'
